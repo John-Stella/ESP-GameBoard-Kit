@@ -88,10 +88,14 @@ void app_main(void)
         int32_t b9 = get_var_btn_state_9();
 
         // check for a winner
-        int32_t winner = check_win_macro(b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        int32_t winner_t = check_win_macro(b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        if (winner_t != 0)
+        {
+            set_var_winner(winner_t);
+        }
 
         printf("Button states: %ld %ld %ld %ld %ld %ld %ld %ld %ld", b1, b2, b3, b4, b5, b6, b7, b8, b9);
-        printf("\tWinner: %ld\r", winner);
+        printf("\tWinner: %ld\r", winner_t);
 
         // switch (winner)
         // {

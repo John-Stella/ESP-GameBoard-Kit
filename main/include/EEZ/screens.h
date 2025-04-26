@@ -11,6 +11,7 @@ typedef struct _objects_t {
     lv_obj_t *welcome_screen;
     lv_obj_t *difficulty_select;
     lv_obj_t *game;
+    lv_obj_t *win_state;
     lv_obj_t *obj0;
     lv_obj_t *obj1;
     lv_obj_t *diff_return;
@@ -27,12 +28,15 @@ typedef struct _objects_t {
     lv_obj_t *btn_7;
     lv_obj_t *btn_8;
     lv_obj_t *btn_9;
+    lv_obj_t *obj4;
+    lv_obj_t *obj5;
     lv_obj_t *player_vs_player;
     lv_obj_t *player_vs_cpu;
     lv_obj_t *return_label;
     lv_obj_t *easy_mode_label;
     lv_obj_t *hard_mode_label;
-    lv_obj_t *obj4;
+    lv_obj_t *obj6;
+    lv_obj_t *win_tag;
 } objects_t;
 
 extern objects_t objects;
@@ -41,6 +45,7 @@ enum ScreensEnum {
     SCREEN_ID_WELCOME_SCREEN = 1,
     SCREEN_ID_DIFFICULTY_SELECT = 2,
     SCREEN_ID_GAME = 3,
+    SCREEN_ID_WIN_STATE = 4,
 };
 
 void create_screen_welcome_screen();
@@ -51,6 +56,9 @@ void tick_screen_difficulty_select();
 
 void create_screen_game();
 void tick_screen_game();
+
+void create_screen_win_state();
+void tick_screen_win_state();
 
 void tick_screen_by_id(enum ScreensEnum screenId);
 void tick_screen(int screen_index);

@@ -29,8 +29,8 @@ enum FlowGlobalVariables {
     FLOW_GLOBAL_VARIABLE_BTN_LOCK_8 = 8,
     FLOW_GLOBAL_VARIABLE_BTN_LOCK_9 = 9,
     FLOW_GLOBAL_VARIABLE_USE_MODEL = 10,
-    FLOW_GLOBAL_VARIABLE_LOOP_TIMER = 11,
-    FLOW_GLOBAL_VARIABLE_LED_POWER = 12
+    FLOW_GLOBAL_VARIABLE_O_WIN_TAG = 11,
+    FLOW_GLOBAL_VARIABLE_X_WIN_TAG = 12
 };
 
 // Native global variables
@@ -53,6 +53,12 @@ extern int32_t get_var_btn_state_8();
 extern void set_var_btn_state_8(int32_t value);
 extern int32_t get_var_btn_state_9();
 extern void set_var_btn_state_9(int32_t value);
+extern int32_t get_var_maj_ver();
+extern void set_var_maj_ver(int32_t value);
+extern int32_t get_var_min_ver();
+extern void set_var_min_ver(int32_t value);
+extern int32_t get_var_winner();
+extern void set_var_winner(int32_t value);
 
 
 #ifdef __cplusplus

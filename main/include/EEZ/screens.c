@@ -68,18 +68,21 @@ static void event_handler_cb_difficulty_select_hard_mode_btn(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_obj2(lv_event_t *e) {
+static void event_handler_cb_game_obj6(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_RELEASED) {
-        e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 0, 0, e);
+    if (event == LV_EVENT_VALUE_CHANGED) {
+        lv_obj_t *ta = lv_event_get_target(e);
+        if (tick_value_change_obj != ta) {
+            const char *value = lv_textarea_get_text(ta);
+            assignStringProperty(flowState, 0, 3, value, "Failed to assign Text in Textarea widget");
+        }
     }
 }
 
-static void event_handler_cb_game_obj3(lv_event_t *e) {
+static void event_handler_cb_game_obj2(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -90,7 +93,7 @@ static void event_handler_cb_game_obj3(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_1(lv_event_t *e) {
+static void event_handler_cb_game_obj3(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -101,18 +104,7 @@ static void event_handler_cb_game_btn_1(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_2(lv_event_t *e) {
-    lv_event_code_t event = lv_event_get_code(e);
-    void *flowState = lv_event_get_user_data(e);
-    (void)flowState;
-    
-    if (event == LV_EVENT_RELEASED) {
-        e->user_data = (void *)0;
-        flowPropagateValueLVGLEvent(flowState, 6, 0, e);
-    }
-}
-
-static void event_handler_cb_game_btn_3(lv_event_t *e) {
+static void event_handler_cb_game_btn_1(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -123,7 +115,7 @@ static void event_handler_cb_game_btn_3(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_4(lv_event_t *e) {
+static void event_handler_cb_game_btn_2(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -134,7 +126,7 @@ static void event_handler_cb_game_btn_4(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_5(lv_event_t *e) {
+static void event_handler_cb_game_btn_3(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -145,7 +137,7 @@ static void event_handler_cb_game_btn_5(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_6(lv_event_t *e) {
+static void event_handler_cb_game_btn_4(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -156,7 +148,7 @@ static void event_handler_cb_game_btn_6(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_7(lv_event_t *e) {
+static void event_handler_cb_game_btn_5(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -167,7 +159,7 @@ static void event_handler_cb_game_btn_7(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_8(lv_event_t *e) {
+static void event_handler_cb_game_btn_6(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -178,7 +170,7 @@ static void event_handler_cb_game_btn_8(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_btn_9(lv_event_t *e) {
+static void event_handler_cb_game_btn_7(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
@@ -189,17 +181,47 @@ static void event_handler_cb_game_btn_9(lv_event_t *e) {
     }
 }
 
-static void event_handler_cb_game_obj4(lv_event_t *e) {
+static void event_handler_cb_game_btn_8(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
     void *flowState = lv_event_get_user_data(e);
     (void)flowState;
     
-    if (event == LV_EVENT_VALUE_CHANGED) {
-        lv_obj_t *ta = lv_event_get_target(e);
-        if (tick_value_change_obj != ta) {
-            const char *value = lv_textarea_get_text(ta);
-            assignStringProperty(flowState, 15, 3, value, "Failed to assign Text in Textarea widget");
-        }
+    if (event == LV_EVENT_RELEASED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 14, 0, e);
+    }
+}
+
+static void event_handler_cb_game_btn_9(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_RELEASED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 15, 0, e);
+    }
+}
+
+static void event_handler_cb_win_state_obj4(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_RELEASED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 2, 0, e);
+    }
+}
+
+static void event_handler_cb_win_state_obj5(lv_event_t *e) {
+    lv_event_code_t event = lv_event_get_code(e);
+    void *flowState = lv_event_get_user_data(e);
+    (void)flowState;
+    
+    if (event == LV_EVENT_RELEASED) {
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 4, 0, e);
     }
 }
 
@@ -273,9 +295,9 @@ void create_screen_welcome_screen() {
         }
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
-            lv_obj_set_pos(obj, 0, 584);
+            lv_obj_set_pos(obj, 0, 568);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "Version:2.1");
+            lv_label_set_text(obj, "GUI Version: 2.2\nCode Version: 2.2");
         }
     }
     
@@ -385,6 +407,24 @@ void create_screen_game() {
     {
         lv_obj_t *parent_obj = obj;
         {
+            lv_obj_t *obj = lv_textarea_create(parent_obj);
+            objects.obj6 = obj;
+            lv_obj_set_pos(obj, 132, 263);
+            lv_obj_set_size(obj, 57, 42);
+            lv_textarea_set_max_length(obj, 128);
+            lv_textarea_set_one_line(obj, false);
+            lv_textarea_set_password_mode(obj, false);
+            lv_obj_add_event_cb(obj, event_handler_cb_game_obj6, LV_EVENT_ALL, flowState);
+            lv_obj_set_style_border_color(obj, lv_color_hex(0xffe0e0e0), LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+        }
+        {
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            lv_obj_set_pos(obj, 36, 276);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            lv_label_set_text(obj, "Player Turn:");
+        }
+        {
             lv_obj_t *obj = lv_button_create(parent_obj);
             objects.obj2 = obj;
             lv_obj_set_pos(obj, 904, 540);
@@ -491,24 +531,6 @@ void create_screen_game() {
             lv_obj_set_size(obj, 130, 130);
             lv_obj_add_event_cb(obj, event_handler_cb_game_btn_9, LV_EVENT_ALL, flowState);
         }
-        {
-            lv_obj_t *obj = lv_label_create(parent_obj);
-            lv_obj_set_pos(obj, 36, 276);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "Player Turn:");
-        }
-        {
-            lv_obj_t *obj = lv_textarea_create(parent_obj);
-            objects.obj4 = obj;
-            lv_obj_set_pos(obj, 132, 263);
-            lv_obj_set_size(obj, 57, 42);
-            lv_textarea_set_max_length(obj, 128);
-            lv_textarea_set_one_line(obj, false);
-            lv_textarea_set_password_mode(obj, false);
-            lv_obj_add_event_cb(obj, event_handler_cb_game_obj4, LV_EVENT_ALL, flowState);
-            lv_obj_set_style_border_color(obj, lv_color_hex(0xffe0e0e0), LV_PART_MAIN | LV_STATE_DEFAULT);
-            lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-        }
     }
     
     tick_screen_game();
@@ -518,23 +540,86 @@ void tick_screen_game() {
     void *flowState = getFlowState(0, 2);
     (void)flowState;
     {
-        const char *new_val = evalTextProperty(flowState, 15, 3, "Failed to evaluate Text in Textarea widget");
-        const char *cur_val = lv_textarea_get_text(objects.obj4);
-        uint32_t max_length = lv_textarea_get_max_length(objects.obj4);
+        const char *new_val = evalTextProperty(flowState, 0, 3, "Failed to evaluate Text in Textarea widget");
+        const char *cur_val = lv_textarea_get_text(objects.obj6);
+        uint32_t max_length = lv_textarea_get_max_length(objects.obj6);
         if (strncmp(new_val, cur_val, max_length) != 0) {
-            tick_value_change_obj = objects.obj4;
-            lv_textarea_set_text(objects.obj4, new_val);
+            tick_value_change_obj = objects.obj6;
+            lv_textarea_set_text(objects.obj6, new_val);
             tick_value_change_obj = NULL;
         }
     }
+}
+
+void create_screen_win_state() {
+    void *flowState = getFlowState(0, 3);
+    (void)flowState;
+    lv_obj_t *obj = lv_obj_create(0);
+    objects.win_state = obj;
+    lv_obj_set_pos(obj, 0, 0);
+    lv_obj_set_size(obj, 1024, 600);
+    {
+        lv_obj_t *parent_obj = obj;
+        {
+            // win_tag
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.win_tag = obj;
+            lv_obj_set_pos(obj, 360, 251);
+            lv_obj_set_size(obj, 304, 99);
+            lv_obj_set_style_text_font(obj, &lv_font_montserrat_42, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_label_set_text(obj, "win_tag");
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            objects.obj4 = obj;
+            lv_obj_set_pos(obj, 0, 540);
+            lv_obj_set_size(obj, 120, 60);
+            lv_obj_add_event_cb(obj, event_handler_cb_win_state_obj4, LV_EVENT_ALL, flowState);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "Replay");
+                }
+            }
+        }
+        {
+            lv_obj_t *obj = lv_button_create(parent_obj);
+            objects.obj5 = obj;
+            lv_obj_set_pos(obj, 904, 540);
+            lv_obj_set_size(obj, 120, 60);
+            lv_obj_add_event_cb(obj, event_handler_cb_win_state_obj5, LV_EVENT_ALL, flowState);
+            {
+                lv_obj_t *parent_obj = obj;
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    lv_obj_set_pos(obj, 0, 0);
+                    lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+                    lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "Main Menu");
+                }
+            }
+        }
+    }
+    
+    tick_screen_win_state();
+}
+
+void tick_screen_win_state() {
+    void *flowState = getFlowState(0, 3);
+    (void)flowState;
 }
 
 
 extern void add_style(lv_obj_t *obj, int32_t styleIndex);
 extern void remove_style(lv_obj_t *obj, int32_t styleIndex);
 
-static const char *screen_names[] = { "Welcome Screen", "Difficulty_Select", "Game" };
-static const char *object_names[] = { "welcome_screen", "difficulty_select", "game", "obj0", "obj1", "diff_return", "easy_mode_btn", "hard_mode_btn", "obj2", "obj3", "btn_1", "btn_2", "btn_3", "btn_4", "btn_5", "btn_6", "btn_7", "btn_8", "btn_9", "player_vs_player", "player_vs_cpu", "return_label", "easy_mode_label", "hard_mode_label", "obj4" };
+static const char *screen_names[] = { "Welcome Screen", "Difficulty_Select", "Game", "Win_state" };
+static const char *object_names[] = { "welcome_screen", "difficulty_select", "game", "win_state", "obj0", "obj1", "diff_return", "easy_mode_btn", "hard_mode_btn", "obj2", "obj3", "btn_1", "btn_2", "btn_3", "btn_4", "btn_5", "btn_6", "btn_7", "btn_8", "btn_9", "obj4", "obj5", "player_vs_player", "player_vs_cpu", "return_label", "easy_mode_label", "hard_mode_label", "obj6", "win_tag" };
 static const char *style_names[] = { "Default", "X", "O" };
 
 
@@ -543,6 +628,7 @@ tick_screen_func_t tick_screen_funcs[] = {
     tick_screen_welcome_screen,
     tick_screen_difficulty_select,
     tick_screen_game,
+    tick_screen_win_state,
 };
 void tick_screen(int screen_index) {
     tick_screen_funcs[screen_index]();
@@ -565,4 +651,5 @@ void create_screens() {
     create_screen_welcome_screen();
     create_screen_difficulty_select();
     create_screen_game();
+    create_screen_win_state();
 }

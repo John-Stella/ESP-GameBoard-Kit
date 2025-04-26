@@ -21,6 +21,9 @@ int32_t btn_state_6;
 int32_t btn_state_7;
 int32_t btn_state_8;
 int32_t btn_state_9;
+int32_t maj_ver;
+int32_t min_ver;
+int32_t winner;
 
 
 // Getters for USER NATIVE variables
@@ -62,6 +65,18 @@ int32_t get_var_btn_state_9() {
     return btn_state_9;
 }
 
+int32_t get_var_maj_ver() {
+    return maj_ver;
+}
+
+int32_t get_var_min_ver() {
+    return min_ver;
+}
+
+int32_t get_var_winner() {
+    return winner;
+}
+
 // Setters for USER NATIVE variables
 // These functions are used to set the values of the global variables.
 
@@ -101,3 +116,14 @@ void set_var_btn_state_9(int32_t value) {
     btn_state_9 = value;
 }
 
+void set_var_maj_ver(int32_t value) {
+    maj_ver = value;
+}
+
+void set_var_min_ver(int32_t value) {
+    min_ver = value;
+}
+
+void set_var_winner(int32_t value) {
+    winner = value;
+}

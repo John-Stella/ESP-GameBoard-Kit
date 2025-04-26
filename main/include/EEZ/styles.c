@@ -11,6 +11,8 @@
 
 void init_style_default_MAIN_DEFAULT(lv_style_t *style) {
     lv_style_set_bg_color(style, lv_color_hex(0xff2196f3));
+    lv_style_set_bg_opa(style, 255);
+    lv_style_set_bg_image_opa(style, 0);
 };
 
 lv_style_t *get_style_default_MAIN_DEFAULT() {
@@ -38,7 +40,10 @@ void remove_style_default(lv_obj_t *obj) {
 //
 
 void init_style_x_MAIN_DEFAULT(lv_style_t *style) {
-    lv_style_set_bg_color(style, lv_color_hex(0xfff32121));
+    lv_style_set_bg_image_src(style, &img_x_img);
+    lv_style_set_bg_opa(style, 0);
+    lv_style_set_bg_color(style, lv_color_hex(0xff2196f3));
+    lv_style_set_bg_image_opa(style, 255);
 };
 
 lv_style_t *get_style_x_MAIN_DEFAULT() {
@@ -66,7 +71,10 @@ void remove_style_x(lv_obj_t *obj) {
 //
 
 void init_style_o_MAIN_DEFAULT(lv_style_t *style) {
-    lv_style_set_bg_color(style, lv_color_hex(0xff56f321));
+    lv_style_set_bg_image_src(style, &img_o_img);
+    lv_style_set_bg_color(style, lv_color_hex(0xff2196f3));
+    lv_style_set_bg_opa(style, 0);
+    lv_style_set_bg_image_opa(style, 255);
 };
 
 lv_style_t *get_style_o_MAIN_DEFAULT() {
