@@ -1,5 +1,5 @@
 /*
- *  Educational Game Board v2.1
+ *  Educational Game Board v2.1.1
  *  Author: John Stella
  *  Date: 2025-4-19
  *  Description: This is a simple game board that uses an ESP32 microcontroller
@@ -8,6 +8,7 @@
 #include "C:\SDP_DIR\project-name\managed_components\espressif__esp32_p4_function_ev_board\include\bsp\esp32_p4_function_ev_board.h"
 #include "ui.h"
 #include "win_check.h"
+#include "vars.h"
 
 static const char *TAG = "MAINAPP";
 
@@ -74,6 +75,36 @@ void app_main(void)
     {
         // Run the UI task
         ui_tick();
+
+        // Check the button states and update the game board
+        int32_t b1 = get_var_btn_state_1();
+        int32_t b2 = get_var_btn_state_2();
+        int32_t b3 = get_var_btn_state_3();
+        int32_t b4 = get_var_btn_state_4();
+        int32_t b5 = get_var_btn_state_5();
+        int32_t b6 = get_var_btn_state_6();
+        int32_t b7 = get_var_btn_state_7();
+        int32_t b8 = get_var_btn_state_8();
+        int32_t b9 = get_var_btn_state_9();
+
+        // check for a winner
+        int32_t winner = check_win_macro(b1, b2, b3, b4, b5, b6, b7, b8, b9);
+
+        printf("Button states: %ld %ld %ld %ld %ld %ld %ld %ld %ld", b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        printf("\tWinner: %ld\r", winner);
+
+        // switch (winner)
+        // {
+        //     case 1:
+        //         printf("Player 1 wins!\n");
+        //         break;
+        //     case 2:
+        //         printf("Player 2 wins!\n");
+        //         break;
+        //     default:
+        //         printf("No winner yet.\n");
+        //         break;
+        //}
 
         // Delay to prevent the task from running too fast
         vTaskDelay(pdMS_TO_TICKS(10));

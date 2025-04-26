@@ -19,31 +19,40 @@ typedef enum {
 
 enum FlowGlobalVariables {
     FLOW_GLOBAL_VARIABLE_PLAYER = 0,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_1 = 1,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_2 = 2,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_3 = 3,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_4 = 4,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_5 = 5,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_6 = 6,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_7 = 7,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_8 = 8,
-    FLOW_GLOBAL_VARIABLE_BTN_STATE_9 = 9,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_1 = 10,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_2 = 11,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_3 = 12,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_4 = 13,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_5 = 14,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_6 = 15,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_7 = 16,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_8 = 17,
-    FLOW_GLOBAL_VARIABLE_BTN_LOCK_9 = 18,
-    FLOW_GLOBAL_VARIABLE_USE_MODEL = 19,
-    FLOW_GLOBAL_VARIABLE_LOOP_TIMER = 20,
-    FLOW_GLOBAL_VARIABLE_LED_POWER = 21
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_1 = 1,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_2 = 2,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_3 = 3,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_4 = 4,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_5 = 5,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_6 = 6,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_7 = 7,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_8 = 8,
+    FLOW_GLOBAL_VARIABLE_BTN_LOCK_9 = 9,
+    FLOW_GLOBAL_VARIABLE_USE_MODEL = 10,
+    FLOW_GLOBAL_VARIABLE_LOOP_TIMER = 11,
+    FLOW_GLOBAL_VARIABLE_LED_POWER = 12
 };
 
 // Native global variables
 
+extern int32_t get_var_btn_state_1();
+extern void set_var_btn_state_1(int32_t value);
+extern int32_t get_var_btn_state_2();
+extern void set_var_btn_state_2(int32_t value);
+extern int32_t get_var_btn_state_3();
+extern void set_var_btn_state_3(int32_t value);
+extern int32_t get_var_btn_state_4();
+extern void set_var_btn_state_4(int32_t value);
+extern int32_t get_var_btn_state_5();
+extern void set_var_btn_state_5(int32_t value);
+extern int32_t get_var_btn_state_6();
+extern void set_var_btn_state_6(int32_t value);
+extern int32_t get_var_btn_state_7();
+extern void set_var_btn_state_7(int32_t value);
+extern int32_t get_var_btn_state_8();
+extern void set_var_btn_state_8(int32_t value);
+extern int32_t get_var_btn_state_9();
+extern void set_var_btn_state_9(int32_t value);
 
 
 #ifdef __cplusplus
