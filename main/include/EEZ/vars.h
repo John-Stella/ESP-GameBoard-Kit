@@ -59,6 +59,32 @@ extern int32_t get_var_min_ver();
 extern void set_var_min_ver(int32_t value);
 extern int32_t get_var_winner();
 extern void set_var_winner(int32_t value);
+extern bool get_var_use_easy_model();
+extern void set_var_use_easy_model(bool value);
+extern bool get_var_use_hard_model();
+extern void set_var_use_hard_model(bool value);
+extern bool get_var_cpu_move_complete();
+extern void set_var_cpu_move_complete(bool value);
+extern bool get_var_reqst_1();
+extern void set_var_reqst_1(bool value);
+extern bool get_var_reqst_2();
+extern void set_var_reqst_2(bool value);
+extern bool get_var_reqst_3();
+extern void set_var_reqst_3(bool value);
+extern bool get_var_reqst_4();
+extern void set_var_reqst_4(bool value);
+extern bool get_var_reqst_5();
+extern void set_var_reqst_5(bool value);
+extern bool get_var_reqst_6();
+extern void set_var_reqst_6(bool value);
+extern bool get_var_reqst_7();
+extern void set_var_reqst_7(bool value);
+extern bool get_var_reqst_8();
+extern void set_var_reqst_8(bool value);
+extern bool get_var_reqst_9();
+extern void set_var_reqst_9(bool value);
+extern bool get_var_reqst_cpu();
+extern void set_var_reqst_cpu(bool value);
 
 
 #ifdef __cplusplus

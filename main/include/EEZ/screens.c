@@ -297,7 +297,7 @@ void create_screen_welcome_screen() {
             lv_obj_t *obj = lv_label_create(parent_obj);
             lv_obj_set_pos(obj, 0, 568);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "GUI Version: 2.2\nCode Version: 2.2");
+            lv_label_set_text(obj, "GUI Version: 2.3\nCode Version: 3.1");
         }
     }
     

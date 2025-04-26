@@ -24,6 +24,19 @@ int32_t btn_state_9;
 int32_t maj_ver;
 int32_t min_ver;
 int32_t winner;
+bool use_easy_model;
+bool use_hard_model;
+bool cpu_move_complete;
+bool reqst_1;
+bool reqst_2;
+bool reqst_3;
+bool reqst_4;
+bool reqst_5;
+bool reqst_6;
+bool reqst_7;
+bool reqst_8;
+bool reqst_9;
+bool reqst_cpu;
 
 
 // Getters for USER NATIVE variables
@@ -77,6 +90,58 @@ int32_t get_var_winner() {
     return winner;
 }
 
+bool get_var_use_easy_model() {
+    return use_easy_model;
+}
+
+bool get_var_use_hard_model() {
+    return use_hard_model;
+}
+
+bool get_var_cpu_move_complete() {
+    return cpu_move_complete;
+}
+
+bool get_var_reqst_1() {
+    return reqst_1;
+}
+
+bool get_var_reqst_2() {
+    return reqst_2;
+}
+
+bool get_var_reqst_3() {
+    return reqst_3;
+}
+
+bool get_var_reqst_4() {
+    return reqst_4;
+}
+
+bool get_var_reqst_5() {
+    return reqst_5;
+}
+
+bool get_var_reqst_6() {
+    return reqst_6;
+}
+
+bool get_var_reqst_7() {
+    return reqst_7;
+}
+
+bool get_var_reqst_8() {
+    return reqst_8;
+}
+
+bool get_var_reqst_9() {
+    return reqst_9;
+}
+
+bool get_var_reqst_cpu() {
+    return reqst_cpu;
+}
+
 // Setters for USER NATIVE variables
 // These functions are used to set the values of the global variables.
 
@@ -126,4 +191,56 @@ void set_var_min_ver(int32_t value) {
 
 void set_var_winner(int32_t value) {
     winner = value;
+}
+
+void set_var_use_easy_model(bool value) {
+    use_easy_model = value;
+}
+
+void set_var_use_hard_model(bool value) {
+    use_hard_model = value;
+}
+
+void set_var_cpu_move_complete(bool value) {
+    cpu_move_complete = value;
+}
+
+void set_var_reqst_1(bool value) {
+    reqst_1 = value;
+}
+
+void set_var_reqst_2(bool value) {
+    reqst_2 = value;
+}
+
+void set_var_reqst_3(bool value) {
+    reqst_3 = value;
+}
+
+void set_var_reqst_4(bool value) {
+    reqst_4 = value;
+}
+
+void set_var_reqst_5(bool value) {
+    reqst_5 = value;
+}
+
+void set_var_reqst_6(bool value) {
+    reqst_6 = value;
+}
+
+void set_var_reqst_7(bool value) {
+    reqst_7 = value;
+}
+
+void set_var_reqst_8(bool value) {
+    reqst_8 = value;
+}
+
+void set_var_reqst_9(bool value) {
+    reqst_9 = value;
+}
+
+void set_var_reqst_cpu(bool value) {
+    reqst_cpu = value;
 }

@@ -9,6 +9,7 @@
 #include "ui.h"
 #include "win_check.h"
 #include "vars.h"
+#include "easy_mode.h"
 
 static const char *TAG = "MAINAPP";
 
@@ -73,10 +74,10 @@ void app_main(void)
 
     while (true)
     {
-        // Run the UI task
+        // Update the UI
         ui_tick();
 
-        // Check the button states and update the game board
+        // Check the button states and store the current game board
         int32_t b1 = get_var_btn_state_1();
         int32_t b2 = get_var_btn_state_2();
         int32_t b3 = get_var_btn_state_3();
@@ -86,9 +87,11 @@ void app_main(void)
         int32_t b7 = get_var_btn_state_7();
         int32_t b8 = get_var_btn_state_8();
         int32_t b9 = get_var_btn_state_9();
+        int32_t board[9] = {b1, b2, b3, b4, b5, b6, b7, b8, b9};
 
         // check for a winner
-        int32_t winner_t = check_win_macro(b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        int32_t winner_t = check_win_macro(board);
+
         if (winner_t != 0)
         {
             set_var_winner(winner_t);
@@ -97,18 +100,28 @@ void app_main(void)
         printf("Button states: %ld %ld %ld %ld %ld %ld %ld %ld %ld", b1, b2, b3, b4, b5, b6, b7, b8, b9);
         printf("\tWinner: %ld\r", winner_t);
 
-        // switch (winner)
-        // {
-        //     case 1:
-        //         printf("Player 1 wins!\n");
-        //         break;
-        //     case 2:
-        //         printf("Player 2 wins!\n");
-        //         break;
-        //     default:
-        //         printf("No winner yet.\n");
-        //         break;
-        //}
+        // Check if CPU's turn
+        if (get_var_reqst_cpu() && winner_t == 0)
+        {
+            // Set the CPU move complete flag
+            set_var_cpu_move_complete(true);
+
+            if (get_var_use_easy_model())
+            {
+                // Perform the CPU move using easy mode
+                easy_turn(board);
+            }
+            else if (get_var_use_hard_model())
+            {
+                // Perform the CPU move using hard mode
+                printf("\n\nError: Hard mode not implemented yet\n\n");
+            }
+            else
+            {
+                // error handling
+                printf("\n\nError: No CPU mode selected\n\n");
+            }
+        }
 
         // Delay to prevent the task from running too fast
         vTaskDelay(pdMS_TO_TICKS(10));
