@@ -2816,7 +2816,7 @@
     #ifdef CONFIG_LV_USE_SYSMON
         #define LV_USE_SYSMON CONFIG_LV_USE_SYSMON
     #else
-        #define LV_USE_SYSMON   0
+        #define LV_USE_SYSMON   1   // js set to 1
     #endif
 #endif
 #if LV_USE_SYSMON
@@ -2835,7 +2835,7 @@
         #ifdef CONFIG_LV_USE_PERF_MONITOR
             #define LV_USE_PERF_MONITOR CONFIG_LV_USE_PERF_MONITOR
         #else
-            #define LV_USE_PERF_MONITOR 0
+            #define LV_USE_PERF_MONITOR 1   // js set to 1
         #endif
     #endif
     #if LV_USE_PERF_MONITOR
@@ -2843,7 +2843,7 @@
             #ifdef CONFIG_LV_USE_PERF_MONITOR_POS
                 #define LV_USE_PERF_MONITOR_POS CONFIG_LV_USE_PERF_MONITOR_POS
             #else
-                #define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_RIGHT
+                #define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_MID   // js set to LV_ALIGN_BOTTOM_MID
             #endif
         #endif
 
