@@ -5,7 +5,7 @@
  *  Description: This is a simple game board that uses an ESP32 microcontroller
  *               to control a mipi display and a touch screen with EEZ Studio, lvgl.
  */
-#include "C:\SDP_DIR\code\project-name\managed_components\espressif__esp32_p4_function_ev_board\include\bsp\esp32_p4_function_ev_board.h"
+#include "C:\SDP_DIR\CODE\project-name\managed_components\espressif__esp32_p4_function_ev_board\include\bsp\esp32_p4_function_ev_board.h"
 #include "ui.h"
 #include "win_check.h"
 #include "vars.h"
