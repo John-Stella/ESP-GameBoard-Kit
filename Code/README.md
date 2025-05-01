@@ -60,3 +60,52 @@ The firmware implements a playable game board with touch input and basic randomi
 ```bash
 idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor
+```
+
+## CPU AI Modes
+
+- ✅ **Easy Mode**: Fully implemented. Uses basic logic to simulate a computer opponent.
+- 🚧 **Hard Mode**: Not yet implemented. Planned for future versions with advanced algorithms.
+
+---
+
+## Logging and Debug Info
+
+The firmware outputs useful diagnostics via the serial console:
+
+- Heap memory usage and availability
+- Display initialization status
+- Button press state updates
+- Detected winner states
+- CPU move execution
+- Error messages when expected variables or conditions are missing
+
+Use `idf.py monitor` to observe real-time log output and debug efficiently.
+
+---
+
+## Future Work
+
+- [ ] Implement Hard Mode AI (e.g., minimax or neural network)
+- [ ] Add sound/buzzer feedback for player moves
+- [ ] Improve graphical UI and transitions
+
+---
+
+## Known Issues
+
+- Transition to the win screen on win detect does not work if the same player wins twice against the CPU.
+- CPU moves are stored and updated on game board reset
+
+## License
+
+This project is intended to be open-source and provided for educational use.
+All licenses are attacth to their respective components
+
+---
+
+## Acknowledgments
+
+- Developed using [**ESP-IDF**](https://docs.espressif.com/projects/esp-idf/en/latest/) by Espressif  
+- UI designed with [**LVGL**](https://lvgl.io/) and [**EEZ Studio**](https://studiolab.io)
+
