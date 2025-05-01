@@ -18,7 +18,7 @@ The firmware implements a playable game board with touch input and basic randomi
 - Interactive game board with 9-button (3x3) layout
 - Touchscreen support via EEZ Studio integration
 - Simple game state tracking and winner detection
-- CPU move logic with Easy Mode AI
+- CPU move logic with Easy Mode
 - Real-time button state monitoring
 - Heap and memory diagnostic logging
 - Modular architecture for future Hard Mode AI
