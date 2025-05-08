@@ -44,4 +44,3 @@ Added port cutouts for power switch and charging access.
 
 Result: Achieved a sleek, durable enclosure aligned with project goals.
 
-Each version is available as .STL and .STEP files in its respective subfolder. You can view these in most 3D modeling software or slice them for printing using Cura, PrusaSlicer, or equivalent tools.
