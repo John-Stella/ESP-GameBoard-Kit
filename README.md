@@ -42,7 +42,7 @@ Use any slicer (e.g., Cura, PrusaSlicer) to prepare the models.
 
 ### 📁 EEZ Studio
 
-Project files for [**EEZ Studio**](https://studiolab.io), used to design and deploy the graphical interface. Includes:
+Project files for [**EEZ Studio**](https://www.envox.eu/studio/studio-introduction/), used to design and deploy the graphical interface. Includes:
 
 - Touchscreen UI layout for the game
 - Custom logic flows integrated with the firmware
